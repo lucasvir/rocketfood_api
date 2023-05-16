@@ -19,6 +19,10 @@ dishRoutes.post("/", dishsController.create);
 dishRoutes.get("/:id", dishsController.show);
 dishRoutes.get("/", dishsController.index);
 dishRoutes.delete("/:id", dishsController.delete);
-dishRoutes.patch("/image", upload.single("image"), dishImageController.send);
+dishRoutes.patch(
+  "/image/:dish_id",
+  upload.single("image"),
+  dishImageController.send
+);
 
 module.exports = dishRoutes;
