@@ -10,7 +10,9 @@ class UsersController {
       throw new AppError("Digite seu e-mail para cadastro");
     }
 
-    const checkUserExists = await knex("users").where({ email }).first();
+    const checkUserExists = await knex("users")
+      .where({ email })
+      .first();
     if (checkUserExists) {
       throw new AppError("Este email já está em uso");
     }
@@ -37,7 +39,9 @@ class UsersController {
       throw new AppError("Usuário não encontrado");
     }
 
-    const [userWithUpdatedEmail] = await knex("users").where({ email });
+    const [userWithUpdatedEmail] = await knex("users").where({
+      email,
+    });
 
     if (userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id) {
       throw new AppError("E-mail já está em uso");
@@ -47,11 +51,16 @@ class UsersController {
     user.email = email ?? user.email;
 
     if (password && !old_password) {
-      throw new AppError("Informe a senha antiga para definir a nova senha");
+      throw new AppError(
+        "Informe a senha antiga para definir a nova senha"
+      );
     }
 
     if (password && old_password) {
-      const checkOldPassword = await compare(old_password, user.password);
+      const checkOldPassword = await compare(
+        old_password,
+        user.password
+      );
 
       if (!checkOldPassword) {
         throw new AppError("A senha antiga não confere.");
