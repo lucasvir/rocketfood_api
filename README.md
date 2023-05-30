@@ -25,6 +25,6 @@ Conta com gerenciamento e ciração de úsuarios, autenticação via JWT Token, 
 
 #
  
- ![logo marca do food explorer](https://imgur.com/a/GQHiBWL)
+ ![logo marca do food explorer](https://i.imgur.com/W7i1bx5.png)
 
 :heavy_check_mark: https://rocketdish.netlify.app/
