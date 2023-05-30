@@ -1,10 +1,10 @@
-# :scroll: DESCRIÇÃO
+# :scroll: Descrição
 
 API criada em Node.js para a aplicação de um restaurante fictício.
 
 Conta com gerenciamento e ciração de úsuarios, autenticação via JWT Token, sistema de criação de pratos, incluindo upload de imagens.
 
-## :wrench: FUNCIONALIDADES
+## :wrench: Funcionalidades
 
 - *Banco de dados SQlite*
 - *Migrations via knex*
